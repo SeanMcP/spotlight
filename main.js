@@ -1,6 +1,7 @@
 (function main() {
   const cursorEl = document.getElementById("cursor");
   const gameEl = document.getElementById("game");
+  const progressEl = document.getElementById("progress");
   const screenEl = document.getElementById("screen");
   const scoreEl = document.getElementById("score");
   const timeEl = document.getElementById("time");
@@ -60,6 +61,7 @@
       index = 0;
     }
     const level = LEVELS[index];
+    progressEl.textContent = `${level.critters.length - roundScore} more`
 
     function setTimer() {
       clearInterval(window.__roundInterval);
@@ -77,6 +79,7 @@
       gameScore++;
       roundScore++;
       scoreEl.textContent = `Score: ${gameScore}`;
+      progressEl.textContent = `${level.critters.length - roundScore} more`
     }
 
     function handleCritterClick(event) {
@@ -89,7 +92,7 @@
         playAudio("done");
         screenEl.style.opacity = 0
         setTimeout(() => {
-          alert(`You found all the critters in ${window.__roundTime} seconds!`);
+          alert(`You found all ${level.critters.length} critters in ${window.__roundTime} seconds!`);
           round();
         }, 300);
       } else {

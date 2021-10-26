@@ -30,6 +30,8 @@ body {
 .display {
   color: white;
   display: flex;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
   font-weight: bold;
   justify-content: space-between;
   left: 0;
@@ -39,6 +41,18 @@ body {
   text-shadow: 0 1px 1px black;
   top: 0;
   z-index: 1;
+}
+
+.display > * {
+  width: 200px;
+}
+
+#progress {
+  text-align: center;
+}
+
+#time {
+  text-align: right;
 }
 
 .critter {
