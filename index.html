@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotlight</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔦</text></svg>"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="game"></main>
+    <svg id="screen" width="100%" height="100%">
+      <mask x="0" y="0" id="cut">
+        <rect y="0" x="0" width="100%" height="100%" fill="white" />
+        <circle
+          id="cursor"
+          cx="50%"
+          cy="50%"
+          r="150"
+          stroke-width="50"
+          stroke="hsl(0,0%,30%)"
+          fill="black"
+        />
+      </mask>
+      <rect
+        y="0"
+        x="0"
+        width="100%"
+        height="100%"
+        fill="black"
+        mask="url(#cut)"
+      />
+    </svg>
+    <div class="display">
+      <div id="score">Score: 0</div>
+      <div id="time">0 seconds</div>
+    </div>
+    <script src="./main.js"></script>
+    <script data-tl="spotlight" data-m="dark" src="https://seanmcp.github.io/tl/sf.js"></script>
+  </body>
+</html>
